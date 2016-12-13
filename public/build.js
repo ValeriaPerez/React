@@ -70,7 +70,10 @@
 	  function Layout() {
 	    _classCallCheck(this, Layout);
 
-	    return _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).call(this));
+
+	    _this.name = "Valeria";
+	    return _this;
 	  }
 
 	  _createClass(Layout, [{
@@ -79,8 +82,13 @@
 	      return _react2.default.createElement(
 	        'h1',
 	        null,
-	        ' Aprendiendo React '
-	      );
+	        ' Aprendiendo React ',
+	        this.name,
+	        ' '
+	      )
+	      //var div = document.createElement("h1")
+	      //div innerHTML = "some content"
+	      ;
 	    }
 	  }]);
 
