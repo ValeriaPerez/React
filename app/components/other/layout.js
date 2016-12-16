@@ -4,21 +4,20 @@ import Header from './header';
 import Footer from './footer';
 
 export default class Layout extends React.Component {
-  getVal() {
-    return "React";
+  constructor() {
+  	super();
+  	this.state = {name: "Andres"};  	
   }
-  
+
   render () {
-  	var lista = [
-  		<Header />,
-  		<Header />,
-  		<Header />,
-		];
+  	setTimeout(() => {
+  		this.setState({name: "Valeria"})
+  	}, 3000)
 
     return (
       <div>
-      	<h3>Aprendiendo {this.getVal()}!</h3>
-      	{lista}
+      	<h3>Ahora lo ves y ahora no...</h3>
+      	{this.state.name}
       	<Header />
       	<Footer />
       	<Header />

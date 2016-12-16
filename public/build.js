@@ -21509,18 +21509,20 @@
 	  function Layout() {
 	    _classCallCheck(this, Layout);
 
-	    return _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).call(this));
+
+	    _this.state = { name: "Andres" };
+	    return _this;
 	  }
 
 	  _createClass(Layout, [{
-	    key: 'getVal',
-	    value: function getVal() {
-	      return "React";
-	    }
-	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var lista = [_react2.default.createElement(_header2.default, null), _react2.default.createElement(_header2.default, null), _react2.default.createElement(_header2.default, null)];
+	      var _this2 = this;
+
+	      setTimeout(function () {
+	        _this2.setState({ name: "Valeria" });
+	      }, 3000);
 
 	      return _react2.default.createElement(
 	        'div',
@@ -21528,11 +21530,9 @@
 	        _react2.default.createElement(
 	          'h3',
 	          null,
-	          'Aprendiendo ',
-	          this.getVal(),
-	          '!'
+	          'Ahora lo ves y ahora no...'
 	        ),
-	        lista,
+	        this.state.name,
 	        _react2.default.createElement(_header2.default, null),
 	        _react2.default.createElement(_footer2.default, null),
 	        _react2.default.createElement(_header2.default, null)
