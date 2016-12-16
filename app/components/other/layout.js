@@ -6,21 +6,23 @@ import Footer from './footer';
 export default class Layout extends React.Component {
   constructor() {
   	super();
-  	this.state = {name: "Andres"};  	
+  	this.state = {name: "Andres"};
+  	this.update = this.update.bind(this);  	
+  }
+
+  update(){
+    this.setState({name:'Valeria'})
   }
 
   render () {
-  	setTimeout(() => {
-  		this.setState({name: "Valeria"})
-  	}, 3000)
-
     return (
       <div>
+      	<Header />
       	<h3>Ahora lo ves y ahora no...</h3>
       	{this.state.name}
-      	<Header />
+      	<button onClick={this.update}>click me</button>
+      	<input />
       	<Footer />
-      	<Header />
       </div>
     );
   }

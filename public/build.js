@@ -21512,30 +21512,35 @@
 	    var _this = _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).call(this));
 
 	    _this.state = { name: "Andres" };
+	    _this.update = _this.update.bind(_this);
 	    return _this;
 	  }
 
 	  _createClass(Layout, [{
+	    key: 'update',
+	    value: function update() {
+	      this.setState({ name: 'Valeria' });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var _this2 = this;
-
-	      setTimeout(function () {
-	        _this2.setState({ name: "Valeria" });
-	      }, 3000);
-
 	      return _react2.default.createElement(
 	        'div',
 	        null,
+	        _react2.default.createElement(_header2.default, null),
 	        _react2.default.createElement(
 	          'h3',
 	          null,
 	          'Ahora lo ves y ahora no...'
 	        ),
 	        this.state.name,
-	        _react2.default.createElement(_header2.default, null),
-	        _react2.default.createElement(_footer2.default, null),
-	        _react2.default.createElement(_header2.default, null)
+	        _react2.default.createElement(
+	          'button',
+	          { onClick: this.update },
+	          'click me'
+	        ),
+	        _react2.default.createElement('input', null),
+	        _react2.default.createElement(_footer2.default, null)
 	      );
 	    }
 	  }]);
