@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Layout from '.app/components/Layout';
+import Layout from './other/layout';
 
 
-ReactDOM.render(<Layout/>, document.getElementById('container'));
+
+
+
+const container = document.getElementById('container');
+
+ReactDOM.render(<Layout/>, container);
