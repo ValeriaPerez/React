@@ -21506,24 +21506,33 @@
 	var Layout = function (_React$Component) {
 	  _inherits(Layout, _React$Component);
 
-	  function Layout() {
+	  function Layout(props) {
 	    _classCallCheck(this, Layout);
 
-	    var _this = _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).call(this));
+	    var _this = _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).call(this, props));
 
-	    _this.state = { name: "Andres" };
-	    _this.update = _this.update.bind(_this);
+	    _this.state = { value: '' };
+
+	    _this.handleChange = _this.handleChange.bind(_this);
+	    _this.handleSubmit = _this.handleSubmit.bind(_this);
 	    return _this;
 	  }
 
 	  _createClass(Layout, [{
-	    key: 'update',
-	    value: function update() {
-	      this.setState({ name: 'Valeria' });
+	    key: 'handleChange',
+	    value: function handleChange(event) {
+	      this.setState({ value: event.target.value });
+	    }
+	  }, {
+	    key: 'handleSubmit',
+	    value: function handleSubmit(event) {
+	      alert('Hola ' + this.state.value);
+	      event.preventDefault();
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
+
 	      return _react2.default.createElement(
 	        'div',
 	        null,
@@ -21531,15 +21540,19 @@
 	        _react2.default.createElement(
 	          'h3',
 	          null,
-	          'Ahora lo ves y ahora no...'
+	          'Formulario'
 	        ),
-	        this.state.name,
 	        _react2.default.createElement(
-	          'button',
-	          { onClick: this.update },
-	          'click me'
+	          'form',
+	          { onSubmit: this.handleSubmit },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            'Escribe tu nombre:',
+	            _react2.default.createElement('input', { type: 'text', placeholder: 'Nombre', value: this.state.value, onChange: this.handleChange })
+	          ),
+	          _react2.default.createElement('input', { type: 'submit', value: 'Enviar' })
 	        ),
-	        _react2.default.createElement('input', null),
 	        _react2.default.createElement(_footer2.default, null)
 	      );
 	    }
