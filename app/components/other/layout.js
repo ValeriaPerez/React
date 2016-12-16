@@ -12,6 +12,7 @@ export default class Layout extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+  
 
   handleChange(event) {
     this.setState({value: event.target.value});
@@ -31,7 +32,7 @@ export default class Layout extends React.Component {
       		<h3>Formulario</h3>
 
       		<form onSubmit={this.handleSubmit}>
-        		<label>
+        		<label style={{color: 'blue'}}>
           		Escribe tu nombre:
           		<input type="text" placeholder="Nombre" value={this.state.value} onChange={this.handleChange} />
         		</label>

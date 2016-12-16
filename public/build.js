@@ -21547,7 +21547,7 @@
 	          { onSubmit: this.handleSubmit },
 	          _react2.default.createElement(
 	            'label',
-	            null,
+	            { style: { color: 'blue' } },
 	            'Escribe tu nombre:',
 	            _react2.default.createElement('input', { type: 'text', placeholder: 'Nombre', value: this.state.value, onChange: this.handleChange })
 	          ),
