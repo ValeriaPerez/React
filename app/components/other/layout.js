@@ -1,7 +1,10 @@
 import React from 'react';
+import redux from 'redux';
 
 import Header from './header';
 import Footer from './footer';
+import Timer from './time';
+import List from './list';
 
 export default class Layout extends React.Component {
   
@@ -20,7 +23,7 @@ export default class Layout extends React.Component {
 
   handleSubmit(event) {
     alert('Hola ' + this.state.value);
-    event.preventDefault();
+    event.preventDefault();//reinicia
   }
 
   
@@ -38,9 +41,8 @@ export default class Layout extends React.Component {
         		</label>
         		<input type="submit" value="Enviar" />
       		</form>
-
+      	<Timer />
       	<Footer />
-      	
       </div>
     );
   }

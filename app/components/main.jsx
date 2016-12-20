@@ -6,7 +6,6 @@ import Layout from './other/layout';
 
 
 
-
 const container = document.getElementById('container');
 
 ReactDOM.render(<Layout/>, container);
